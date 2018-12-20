@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification
+	xmlns="https://github.com/vqmod/vqmod"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd"
+	>
+	<id><![CDATA[[VQMOD] Category: Change limits to 20, 40, 100]]></id>
+	<version>0.1.0</version>
+	<vqmver>2.6.3</vqmver>
+	<author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
+	<file path="catalog/controller/product/" name="category.php" error="log">
+		<operation error="skip">
+			<search position="replace"><![CDATA[$limits = array_unique(array($this->config->get('config_product_limit'), 25, 50, 75, 100));]]></search>
+			<add><![CDATA[
+			// kanenas: knns_category_change_limits_to_20_40_100.xml (start) <<
+			$limits = array_unique(array($this->config->get('config_product_limit'), 40, 100));
+			// kanenas: knns_category_change_limits_to_20_40_100.xml (end) <<
+			]]></add>
+		</operation>
+	</file>
+</modification>
